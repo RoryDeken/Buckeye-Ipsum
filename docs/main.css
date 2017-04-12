@@ -1,0 +1,12 @@
+
+div {
+  width:75%;
+  margin: auto;
+  display: block;
+  padding:15px;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+h1,h2 {
+  text-align: center;
+}
