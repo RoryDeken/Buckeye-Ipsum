@@ -8,7 +8,7 @@
   ];
   var target = document.getElementById("target"), count = document.getElementById('quantity').value;
 
-docment.getElementById('submit').addEventListener("click", generate);
+document.getElementById('submit').addEventListener("click", generate);
 
 function generate(){
   for(i = 0; i < count ; i ++){
