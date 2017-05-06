@@ -1,4 +1,4 @@
-(function(){
+// (function(){
   var dictionary =
   [
     'woody','Archie Griffin', 'WOSU' ,'oval', 'mirror lake', 'horseshoe', 'moritz', 'scarlet',
@@ -27,4 +27,4 @@ var rand = Math.floor(Math.random() * (dictionary.length - 0) -1);
 
   }
 }
-})();
+// })();
