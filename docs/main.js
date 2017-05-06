@@ -41,7 +41,7 @@ console.log(randNum);
 }else {
   for(i = 0; i < limit ; i ++){
 
-    for(j = 0; j < 90 ; i ++){
+    for(j = 0; j < 90 ; j ++){
 var randNum = rand();
 text = text + " " +  dictionary[randNum];
 console.log(randNum);
