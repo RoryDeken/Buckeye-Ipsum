@@ -24,14 +24,14 @@ while(count < limit){
   var randNum = rand();
 count = count + dictionary[randNum].length;
 text = text + " " + dictionary[randNum];
-
+console.log(randNum);
 }
 }else if (type == 2) {
   for(i = 0; i < limit ; i ++){
 
 var randNum = rand();
 text = text + " " +  dictionary[randNum];
-
+console.log(randNum);
 
 
 
@@ -43,7 +43,7 @@ text = text + " " +  dictionary[randNum];
     for(j = 0; j < 90 ; i ++){
 var randNum = rand();
 text = text + " " +  dictionary[randNum];
-
+console.log(randNum);
   }
   text = text + "<br />";
 
