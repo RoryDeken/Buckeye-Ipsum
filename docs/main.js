@@ -13,12 +13,13 @@
 document.getElementById('submit').addEventListener("click", generate);
 // 90 words = paragraph
 
-   function rand() {Math.floor(Math.random() * (dictionary.length - 0) -1);}
+   function rand() {Math.floor(Math.random() * dictionary.length - 1);}
 
 function generate(event){
   event.preventDefault();
   limit = document.getElementById('quantity').value;
   type = parseInt(document.getElementById('type').value);
+  console.log(type);
   if(type == 1){
 while(count < limit){
   var randNum = rand();
