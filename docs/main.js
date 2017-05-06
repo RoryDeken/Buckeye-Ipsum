@@ -8,23 +8,52 @@
   ,'excellence', 'Urban Meyer', 'Hoppalong Cassidy', 'Woody Hayes', 'Columbus', 'Orlando Pace',
   '14-0', 'Olentangy river', 'Les Wexner', 'Mike Conley', 'Ryan Shazier', 'Eddie George', 'Dr. Michael Drake',
   'RPAC' , 'Skull Session', '1870', 'Jack Nicklaus'
-  ];
-  var target = document.getElementById("target"), count;
+], target = document.getElementById("target"), count = 0, text, type, limit;
 
 document.getElementById('submit').addEventListener("click", generate);
+// 90 words = paragraph
+
+   function rand() {Math.floor(Math.random() * (dictionary.length - 0) -1);}
 
 function generate(event){
   event.preventDefault();
-  count = document.getElementById('quantity').value;
+  limit = document.getElementById('quantity').value;
   type = parseInt(document.getElementById('type').value);
-  target.innerText = '';
-  for(i = 0; i < count ; i ++){
+  if(type == 1){
+while(count < limit){
+  var randNum = rand();
+count = count + dictionary[randNum].length;
+text = text + " " + dictionary[randNum];
 
-var rand = Math.floor(Math.random() * (dictionary.length - 0) -1);
+}
+}else if (type == 2) {
+  for(i = 0; i < limit ; i ++){
 
-    target.innerText = target.innerText + " " + dictionary[rand];
+var randNum = rand();
+text = text + " " +  dictionary[randNum];
+
+
 
 
   }
+
+}else {
+  for(i = 0; i < limit ; i ++){
+
+    for(j = 0; j < 90 ; i ++){
+var randNum = rand();
+text = text + " " +  dictionary[randNum];
+
+  }
+  text = text + "<br />";
+
+
+}
+
+
+}
+  target.innerText = '';
+
+  target.innerText = text;
 }
 // })();
