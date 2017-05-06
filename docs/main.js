@@ -10,7 +10,8 @@
 
 document.getElementById('submit').addEventListener("click", generate);
 
-function generate(){
+function generate(event){
+  event.preventDefault();
   count = document.getElementById('quantity').value;
   for(i = 0; i < count ; i ++){
 
