@@ -8,56 +8,91 @@
   ,'excellence', 'Urban Meyer', 'Hoppalong Cassidy', 'Woody Hayes', 'Columbus', 'Orlando Pace',
   '14-0', 'Olentangy river', 'Les Wexner', 'Mike Conley', 'Ryan Shazier', 'Eddie George', 'Dr. Michael Drake',
   'RPAC' , 'Skull Session', '1870', 'Jack Nicklaus'
-], target = document.getElementById("target"), count = 0, text, type, limit, randNum = 0;
+],
+stringDictionary = [];
 
-document.getElementById('submit').addEventListener("click", generate);
+
+var target = document.getElementById("target"), count = 0, text, type, limit, paragraph, spacing, bounds;
+
+for(i=0; i < dictionary.length; i++){
+
+    for(j=0; j < dictionary[i].length; j++){
+      var ch = dictionary[i].charAt(j);
+      stringDictionary.push(ch);
+    }
+
+}
+
+
+document.getElementById('controls').addEventListener("change", generate);
+limit = document.getElementById('quantity').value - 1;
+type = parseInt(document.getElementById('type').value);
 // 90 words = paragraph
+function printWords(type = 2){
+  text = '';
+bounds = 0;
+if(type == 3){
+  limit = paragraph * limit;
+}
+  for(i = 0; i < limit ; i ++){
 
-   function generateRandomNumber() {
+    spacing = i % paragraph;
 
-     return Math.floor(Math.random() * dictionary.length);
-   }
+    if(bounds >= dictionary.length ){
+      bounds = 0;
+    }
+    if(spacing == 0 && Number.isInteger(spacing) && i != 0){
+      text = text + ".<br><br>";
+    }
+    text = text + " " +  dictionary[bounds];
+    bounds = bounds + 1;
+
+  }
+
+}
+
 
 function generate(event){
   event.preventDefault();
   limit = document.getElementById('quantity').value;
   type = parseInt(document.getElementById('type').value);
-  randNum = generateRandomNumber();
-  console.log("Rand num is " + randNum);
-  console.log("The type is: " + type);
-  console.log("Limit is: " + limit);
+  paragraph = document.getElementById('paragraph-length').value;
 count = 0;
-  if(type == 1){
-while(count < limit){
-count++;
-text = text + " " + dictionary[(randNum + count)];
-console.log(randNum);
-}
-randNum = 0;
-}else if (type == 2) {
+if(limit > 0){
+switch(type){
+  case 1:
+  text = '';
+  bounds = 0;
   for(i = 0; i < limit ; i ++){
-
-text = text + " " +  dictionary[(randNum + i)];
-console.log(randNum);
+    if(bounds > stringDictionary.length){
+      bounds = 0;
+    }
+    text = text + stringDictionary[bounds];
+    bounds = bounds + 1;
   }
-randNum = 0;
+
+
+  break;
+
+  case 2:
+  printWords();
+  break;
+
+  case 3:
+  printWords(3);
+  break;
+
+
+
+}
 }else {
-  for(i = 0; i < limit ; i ++){
-randNum++;
-    for(j = 0; j < 90 ; j ++){
-text = text + " " +  dictionary[(randNum + i)];
-console.log(randNum);
-  }
-  text = text + "<br />";
-
+  text = '';
+}
+target.innerHTML = text;
+text = '';
 
 }
-randNum = 0;
-count = 0;
 
-}
-  target.innerHTML = '';
 
-  target.innerText = text;
-}
+
 // })();
