@@ -29,7 +29,7 @@ limit = document.getElementById('quantity').value - 1;
 type = parseInt(document.getElementById('type').value);
 // 90 words = paragraph
 function printWords(type = 2){
-  text = '';
+  text = 'Buckeye Ipsum ';
 bounds = 0;
 if(type == 3){
   limit = paragraph * limit;
