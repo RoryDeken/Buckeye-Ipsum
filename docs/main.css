@@ -4,7 +4,7 @@ font-family:proximanova, arial;
 display:block;
 }
 
-p {
+div, p {
   font-family:capita;
   font-size:12px;
 }
