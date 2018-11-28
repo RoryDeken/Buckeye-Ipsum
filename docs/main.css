@@ -16,10 +16,10 @@ div, p {
   display:block;
 }
 #controls input[type="number"] {
-    width:75px;
+    width:70px;
     border: 2px solid #ccc;
     border-radius: 2px;
-    text-align:right;
+    text-align:center;
     margin-right:5px;
     margin-left:5px;
 }
