@@ -7,5 +7,7 @@ display:block;
 div, p {
   font-family:capita;
   font-size:12px;
+}
+.jumbotron {
   display:block;
 }
