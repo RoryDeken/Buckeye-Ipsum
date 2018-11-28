@@ -16,7 +16,7 @@ div, p {
   display:block;
 }
 #controls input[type="number"] {
-    width:50px;
+    width:75px;
     border: 2px solid #ccc;
     border-radius: 2px;
     text-align:right;
