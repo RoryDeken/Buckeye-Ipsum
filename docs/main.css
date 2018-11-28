@@ -3,11 +3,18 @@ h1 {
 font-family:proximanova, arial;
 display:block;
 }
+h2 {
+  font-family:capita;
+}
 
 div, p {
   font-family:capita;
-  font-size:12px;
+  font-size:16px;
+  line-height:28px;
 }
 .jumbotron {
   display:block;
+}
+#controls {
+    
 }
