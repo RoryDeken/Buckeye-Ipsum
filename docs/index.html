@@ -1,36 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Buckeye Ipsum | A lorem ipsum generator for Ohio State</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://newmedia.osu.edu/projects/osu-navbar/dist/css/unav-styles.css" >
-    <link rel="stylesheet" href="https://www.osu.edu/assets/fonts/webfonts.css" >
-<link rel="stylesheet" href="main.css" >
-<link rel="icon" href="https://raw.githubusercontent.com/RoryDeken/Buckeye-Ipsum/master/osu-digital-elements/favicon/favicon.ico" >
-</head>
-<body>
-    <div id="unav-wrapper"><div id="unav" role="navigation" aria-label="Ohio State navigation bar" style="padding-left: 0; padding-right: 0;" class="container"><a href="#content" id="unav-skip">Skip to main content</a><a href="https://www.osu.edu/" class="unav-univ-name"><span>OSU.EDU, The Ohio State University</span></a><div class="unav-useful-links"><ul><li><a href="https://www.osu.edu/help.php">Help</a></li><li><a href="http://buckeyelink.osu.edu/">BuckeyeLink</a></li><li><a href="https://www.osu.edu/map/">Map</a></li><li><a href="https://www.osu.edu/findpeople.php">Find People</a></li><li><a href="https://email.osu.edu/" class="webmaillink">Webmail</a></li></ul></div><div class="unav-controls"><a href="#" aria-expanded="false" class="unav-search-button"><span>Expand search</span></a><a href="#" aria-expanded="false" class="unav-menu-button"><span>Expand useful links menu</span></a></div><form autocomplete="off" aria-hidden="true" class="unav-search" method="GET" action="https://www.osu.edu/search.html"><div class="unav-input-container"><label for="unav-search-input">Search buildings, people, sites...</label><input id="unav-search-input" type="search" placeholder="Search buildings, people, sites..." name="query" autocomplete="off" class="unav-search-input"></div></form></div><div aria-hidden="true" tabindex="-1" role="dialog" aria-labelledby="unav-results-heading" aria-describedby="unav-results-wrapper" class="unav-results-container container"><h2 aria-live="polite" role="alert" tabindex="-1" class="unav-results-update"></h2><div id="unav-results-wrapper" role="document" class="unav-results-wrapper"><h1 id="unav-results-heading">Search Results</h1><div class="unav-results"></div><div class="unav-more-results"><img src="https://newmedia.osu.edu/projects/osu-navbar/dist/images/loading.gif" aria-label="Loading more results" role="progessbar" class="unav-loader"><p><a href="https://www.osu.edu/search">More Results</a></p><button class="unav-close-search-results">End of results. Click to close.</button></div></div></div></div>
-<div id="content" class="container">
-         <div class="row jumbotron jumbotron-fluid bg-white">
-<h1>Buckeye Ipsum</h1>
-<h2>Select the amount of ipsum you want</h2>
-    </div>
-    <div id="controls" class="row">
-      <p>
-          <select id="type">
-            <option value="2">Words</option>
-            <option value="1">Characters</option>
-            <option value="3">Paragraphs</option>
-          </select>
-          <input id="quantity" type="number" value="120">
-      </p>
-       <p>Current words per paragraph is <input id="paragraph-length" type="number" value="120"></p>
-  </div>
-    <div id ="target" clas="row">
-Buckeye Ipsum Woody Archie Griffin WOSU Oval Mirror Lake Horseshoe Moritz Scarlet Gray Brutus Buckeye Leaf Ohio State The Union Tbdbitl OH-IO Script Ohio Carmen Ohio Hagerty Hall Fisher John Glenn Buckeyes Lee Horvath Michael Redd The Lantern Morrill Hayes St. John's Excellence Urban Meyer Hoppalong Cassidy Woody Hayes Columbus Orlando Pace 14-0 Olentangy River Les Wexner Mike Conley Ryan Shazier Eddie George Dr. Michael Drake RPAC Skull Session 1870 Jack Nicklaus Woody Archie Griffin WOSU Oval Mirror Lake Horseshoe Moritz Scarlet Gray Brutus Buckeye Leaf Ohio State The Union Tbdbitl OH-IO Script Ohio Carmen Ohio Hagerty Hall Fisher John Glenn Buckeyes Lee Horvath Michael Redd The Lantern Morrill Hayes St. John's Excellence Urban Meyer Hoppalong Cassidy Woody Hayes Columbus Orlando Pace 14-0 Olentangy River Les Wexner Mike Conley Ryan Shazier Eddie George Dr. Michael Drake RPAC Skull Session 1870 Jack Nicklaus Woody Archie Griffin WOSU Oval Mirror Lake Horseshoe Moritz Scarlet Gray Brutus Buckeye Leaf Ohio State The Union Tbdbitl OH-IO Script Ohio Carmen Ohio Hagerty Hall Fisher John Glenn Buckeyes Lee Horvath Michael Redd The Lantern Morrill Hayes St. John's Excellence Urban Meyer Hoppalong Cassidy Woody Hayes Columbus
-</div>
-</div>
 
-<script src="main.js"></script>
-</body>
+  <head>
+    <title>Buckeye Ipsum | A lorem ipsum generator for Ohio State</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/unav-styles.css">
+    <link rel="stylesheet" href="css/fonts/webfonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="img/favicon.ico">
+  </head>
+
+  <body>
+    <div id="unav-wrapper">
+      <div id="unav" role="navigation" aria-label="Ohio State navigation bar" style="padding-left: 0; padding-right: 0;" class="container">
+        <a href="#content" id="unav-skip">Skip to main content</a>
+        <a href="https://www.osu.edu/" class="unav-univ-name"><span>OSU.EDU, The Ohio State University</span></a>
+        <div class="unav-useful-links">
+          <ul>
+            <li>
+              <a href="https://www.osu.edu/help.php">Help</a>
+            </li>
+            <li>
+              <a href="http://buckeyelink.osu.edu/">BuckeyeLink</a>
+            </li>
+            <li>
+              <a href="https://www.osu.edu/map/">Map</a>
+            </li>
+            <li>
+              <a href="https://www.osu.edu/findpeople.php">Find People</a>
+            </li>
+            <li>
+              <a href="https://email.osu.edu/" class="webmaillink">Webmail</a>
+            </li>
+          </ul>
+        </div>
+        <div class="unav-controls">
+          <a href="#" aria-expanded="false" class="unav-search-button"><span>Expand search</span></a>
+          <a href="#" aria-expanded="false" class="unav-menu-button"><span>Expand useful links menu</span></a>
+        </div>
+        <form autocomplete="off" aria-hidden="true" class="unav-search" method="GET" action="https://www.osu.edu/search.html">
+          <div class="unav-input-container">
+            <label for="unav-search-input">Search buildings, people, sites...</label>
+            <input id="unav-search-input" type="search" placeholder="Search buildings, people, sites..." name="query" autocomplete="off" class="unav-search-input">
+          </div>
+        </form>
+      </div>
+      <div aria-hidden="true" tabindex="-1" role="dialog" aria-labelledby="unav-results-heading" aria-describedby="unav-results-wrapper" class="unav-results-container container">
+        <h2 aria-live="polite" role="alert" tabindex="-1" class="unav-results-update"></h2>
+        <div id="unav-results-wrapper" role="document" class="unav-results-wrapper">
+          <h1 id="unav-results-heading">Search Results</h1>
+          <div class="unav-results"></div>
+          <div class="unav-more-results">
+            <img src="img/loading.gif" aria-label="Loading more results" role="progessbar" class="unav-loader">
+            <p>
+              <a href="https://www.osu.edu/search">More Results</a>
+            </p>
+            <button class="unav-close-search-results">End of results. Click to close.</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content" class="container">
+      <div class="row jumbotron jumbotron-fluid bg-white">
+        <h1>Buckeye Ipsum</h1>
+        <h2>Select the amount of ipsum you want</h2>
+      </div>
+      <div id="controls" class="row">
+        <div class="col-md-6 col-xs-12">
+          <p>
+            <select id="type">
+              <option value="2">Words</option>
+              <option value="1">Characters</option>
+              <option value="3">Paragraphs</option>
+            </select>
+            <input id="quantity" type="number" value="120">
+          </p>
+          <p>Current words per paragraph is
+            <input id="paragraph-length" type="number" value="120">
+          </p>
+        </div>
+      </div>
+      <div clas="row">
+        <div class="col-xs-12" id="target">
+          Buckeye Ipsum Woody Archie Griffin WOSU Oval Mirror Lake Horseshoe Moritz Scarlet Gray Brutus Buckeye Leaf Ohio State The Union Tbdbitl OH-IO Script Ohio Carmen Ohio Hagerty Hall Fisher John Glenn Buckeyes Lee Horvath Michael Redd The Lantern Morrill
+          Hayes St. John's Excellence Urban Meyer Hoppalong Cassidy Woody Hayes Columbus Orlando Pace 14-0 Olentangy River Les Wexner Mike Conley Ryan Shazier Eddie George Dr. Michael Drake RPAC Skull Session 1870 Jack Nicklaus Woody Archie Griffin WOSU
+          Oval Mirror Lake Horseshoe Moritz Scarlet Gray Brutus Buckeye Leaf Ohio State The Union Tbdbitl OH-IO Script Ohio Carmen Ohio Hagerty Hall Fisher John Glenn Buckeyes Lee Horvath Michael Redd The Lantern Morrill Hayes St. John's Excellence Urban
+          Meyer Hoppalong Cassidy Woody Hayes Columbus Orlando Pace 14-0 Olentangy River Les Wexner Mike Conley Ryan Shazier Eddie George Dr. Michael Drake RPAC Skull Session 1870 Jack Nicklaus Woody Archie Griffin WOSU Oval Mirror Lake Horseshoe Moritz
+          Scarlet Gray Brutus Buckeye Leaf Ohio State The Union Tbdbitl OH-IO Script Ohio Carmen Ohio Hagerty Hall Fisher John Glenn Buckeyes Lee Horvath Michael Redd The Lantern Morrill Hayes St. John's Excellence Urban Meyer Hoppalong Cassidy Woody
+          Hayes Columbus
+        </div>
+        <div class="col-xs-12">
+          <a href="#" id="copy" data-clipboard-target="#target">Copy<a/>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
 </html>

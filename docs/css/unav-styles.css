@@ -1,0 +1,450 @@
+/* ------------------------------------------------------------------
+   Project:	OSU Navbar
+   Owner: University Communications, https://ucom.osu.edu
+   ------------------------------------------------------------------- */
+/* --------------------------------
+   colors
+   -------------------------------- */
+#unav .unav-controls:after, #unav-wrapper .unav-useful-links:after, #unav-wrapper .unav-useful-links ul:after, #unav-wrapper .unav-results-wrapper .unav-results > div[class^="unav-results-"] .unav-result-wrapper:after, #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-results:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+#unav .unav-univ-name span, #unav .unav-controls > a span, #unav .unav-search .unav-input-container label, .unav-results-container .unav-results-update, #unav-wrapper #unav-skip, #unav-wrapper #unav-results-heading, #unav-wrapper .unav-results-wrapper .unav-results .unav-all-results a span, #unav-wrapper .unav-results-wrapper .unav-results + .unav-more-results .unav-close-search-results {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+  border: 0; }
+
+.unav-visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+  border: 0; }
+
+/* --------------------------------
+   navbar
+   -------------------------------- */
+body.unav-overlay:after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(102, 102, 102, 0.9); }
+
+#unav-wrapper {
+  z-index: 2000; }
+
+#unav {
+  position: relative;
+  height: 43px;
+  background: #d1d1d1;
+  border: 5px solid #bb0000;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  box-sizing: border-box; }
+  #unav * {
+    box-sizing: border-box; }
+  #unav .unav-univ-name {
+    display: block;
+    width: 80px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    background-image: url(../img/osu-navbar-sprite.png);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 160px;
+    margin-left: .75em; }
+  #unav .unav-controls {
+    width: 90px;
+    height: 38px;
+    float: right;
+    position: relative;
+    z-index: 2200; }
+    @media (min-width: 768px) {
+      #unav .unav-controls {
+        width: 45px; } }
+    #unav .unav-controls > a {
+      display: block;
+      height: inherit;
+      float: left; }
+      #unav .unav-controls > a.unav-active {
+        background: transparent; }
+      #unav .unav-controls > a:hover {
+        outline: 0; }
+      #unav .unav-controls > a.unav-search-button {
+        width: 45px;
+        background-image: url(../img/osu-navbar-sprite.png);
+        background-repeat: no-repeat;
+        background-position: -74px -1px;
+        background-size: 158px 78px;
+        border-left: 1px solid #b3b3b3;
+        border-right: 1px solid #b3b3b3; }
+        @media (min-width: 768px) {
+          #unav .unav-controls > a.unav-search-button {
+            border: 0; } }
+        #unav .unav-controls > a.unav-search-button.unav-active {
+          border-color: #b3b3b3;
+          border-left-color: transparent;
+          background-image: url(../img/osu-navbar-sprite.png);
+          background-repeat: no-repeat;
+          background-position: -114px -40px;
+          background-size: 158px 78px;
+          box-shadow: inset -10px 0 10px -10px #7bb6dd; }
+          @media (min-width: 768px) {
+            #unav .unav-controls > a.unav-search-button.unav-active {
+              box-shadow: none; } }
+      #unav .unav-controls > a.unav-menu-button {
+        background-image: url(../img/osu-navbar-sprite.png);
+        background-repeat: no-repeat;
+        background-position: -115px -1px;
+        background-size: 158px 78px;
+        background-color: #d1d1d1;
+        width: 45px; }
+        @media (min-width: 768px) {
+          #unav .unav-controls > a.unav-menu-button {
+            display: none; } }
+  #unav .unav-search {
+    display: none;
+    position: absolute;
+    z-index: 2100;
+    top: -48px;
+    width: 100%;
+    height: 38px;
+    margin-top: 0; }
+    #unav .unav-search.unav-expanded {
+      display: block; }
+    @media (min-width: 768px) {
+      #unav .unav-search {
+        width: 500px;
+        right: 0; } }
+    #unav .unav-search .unav-input-container {
+      position: relative; }
+      #unav .unav-search .unav-input-container:before {
+        position: absolute;
+        content: '';
+        display: block;
+        pointer-events: none;
+        width: 43px;
+        height: 38px;
+        background-image: url(../img/osu-navbar-sprite.png);
+        background-repeat: no-repeat;
+        background-position: -74px -40px;
+        background-size: 158px 78px; }
+    #unav .unav-search .unav-search-input {
+      width: 100%;
+      height: 38px;
+      border: 0;
+      padding-left: 3em;
+      padding-top: 0;
+      padding-right: 96px;
+      padding-bottom: 0;
+      font-size: 16px;
+      font-weight: 300;
+      background: #fff; }
+      @media (min-width: 768px) {
+        #unav .unav-search .unav-search-input {
+          padding-right: 48px; } }
+      #unav .unav-search .unav-search-input:focus {
+        outline: 0;
+        box-shadow: inset 0 0 10px #7bb6dd; }
+    #unav .unav-search.unav-expanded {
+      top: 0; }
+
+.unav-results-container {
+  display: none;
+  position: relative; }
+
+#unav-wrapper {
+  position: relative;
+  overflow-y: visible;
+  height: 43px;
+  background: #d1d1d1;
+  border: 5px solid #bb0000;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  box-sizing: border-box; }
+  #unav-wrapper.unav-pushed #unav,
+  #unav-wrapper.unav-pushed #unav-results-wrapper {
+    position: relative;
+    left: -227px; }
+  @media (min-width: 768px) {
+    #unav-wrapper.unav-pushed #unav {
+      left: auto; } }
+  @media (min-width: 768px) {
+    #unav-wrapper.unav-pushed .unav-results-wrapper {
+      left: auto;
+      right: 0;
+      position: absolute; } }
+  #unav-wrapper.unav-pushed .unav-useful-links {
+    right: 0;
+    top: 0;
+    position: fixed;
+    background: #292929;
+    height: 100%;
+    width: 227px;
+    clip: auto;
+    margin: 0;
+    z-index: 2300;
+    padding: 1em;
+    box-shadow: inset 7px 0 9px -7px rgba(0, 0, 0, 0.8);
+    display: block; }
+    @media (min-width: 768px) {
+      #unav-wrapper.unav-pushed .unav-useful-links {
+        right: 50px;
+        background: transparent;
+        box-shadow: none;
+        width: auto;
+        top: 0;
+        height: 38px;
+        padding: 0;
+        z-index: auto;
+        position: absolute; } }
+  #unav-wrapper #unav-skip:focus {
+    height: 53px;
+    line-height: 53px;
+    width: 300px;
+    clip: auto;
+    background: #bb0000;
+    z-index: 2400;
+    text-align: center;
+    outline: 0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top: 0;
+    margin: 0;
+    top: 0;
+    color: #fff;
+    left: 50%;
+    margin-left: -150px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.7); }
+  #unav-wrapper .unav-useful-links {
+    right: -227px;
+    top: 0;
+    position: fixed;
+    background: #292929;
+    height: 100%;
+    width: 227px;
+    margin: 0;
+    z-index: 2300;
+    padding: 1em;
+    box-shadow: inset 7px 0 9px -7px rgba(0, 0, 0, 0.8);
+    display: none; }
+    #unav-wrapper .unav-useful-links ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+    #unav-wrapper .unav-useful-links a {
+      color: #fff;
+      font-family: "proximanova", Arial, sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      text-decoration: none; }
+      #unav-wrapper .unav-useful-links a:focus, #unav-wrapper .unav-useful-links a:hover {
+        text-decoration: underline; }
+    @media (min-width: 768px) {
+      #unav-wrapper .unav-useful-links {
+        box-shadow: none;
+        display: block;
+        width: auto;
+        height: 43px;
+        background: transparent;
+        position: absolute;
+        right: 50px;
+        padding: 0;
+        top: 0;
+        clip: auto;
+        margin: 0;
+        z-index: auto; }
+        #unav-wrapper .unav-useful-links ul li {
+          float: left;
+          height: inherit;
+          margin-right: .5em; }
+          #unav-wrapper .unav-useful-links ul li:last-child {
+            margin-right: 0; }
+          #unav-wrapper .unav-useful-links ul li a {
+            display: block;
+            line-height: 38px;
+            font-size: 14px;
+            padding: 0 .25em;
+            color: #333;
+            text-decoration: none;
+            text-align: center; } }
+  #unav-wrapper .unav-results-wrapper {
+    position: absolute;
+    width: 100%;
+    z-index: 1060;
+    right: 0;
+    padding-top: 0; }
+    @media (min-width: 768px) {
+      #unav-wrapper .unav-results-wrapper {
+        width: 500px;
+        position: absolute;
+        right: 0; } }
+    #unav-wrapper .unav-results-wrapper .unav-results {
+      background: #d1d1d1;
+      font-size: 1em;
+      padding: 0 1em; }
+      #unav-wrapper .unav-results-wrapper .unav-results > .unav-results-people .unav-provider-result img {
+        max-width: 50px; }
+      #unav-wrapper .unav-results-wrapper .unav-results > .unav-results-buildings .unav-provider-result img {
+        max-width: 50px; }
+      #unav-wrapper .unav-results-wrapper .unav-results > .unav-results-buildings .unav-provider-result,
+      #unav-wrapper .unav-results-wrapper .unav-results > .unav-results-people .unav-provider-result {
+        float: left;
+        width: 50%; }
+      #unav-wrapper .unav-results-wrapper .unav-results > .unav-results-web .unav-provider-result {
+        padding: .5em 0;
+        border-top: 1px solid #d1d1d1; }
+      #unav-wrapper .unav-results-wrapper .unav-results > div[class^="unav-results-"]:first-child .unav-result-wrapper {
+        border-top: 0; }
+      #unav-wrapper .unav-results-wrapper .unav-results > div[class^="unav-results-"] {
+        padding-top: 1em; }
+        #unav-wrapper .unav-results-wrapper .unav-results > div[class^="unav-results-"] .unav-result-wrapper {
+          width: 100%; }
+      #unav-wrapper .unav-results-wrapper .unav-results > div[class^="unav-results-"]:last-child {
+        margin-bottom: 0; }
+      #unav-wrapper .unav-results-wrapper .unav-results .unav-all-results {
+        text-align: right;
+        width: 50%;
+        float: right; }
+        #unav-wrapper .unav-results-wrapper .unav-results .unav-all-results a {
+          color: #007fff;
+          text-decoration: none;
+          display: inline-block;
+          padding: .5em; }
+          #unav-wrapper .unav-results-wrapper .unav-results .unav-all-results a:hover {
+            text-decoration: underline; }
+      #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-info {
+        padding: .5em 0;
+        width: 50%;
+        font-size: 1em;
+        float: left; }
+        #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-info .unav-provider-name,
+        #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-info .unav-total-results {
+          color: #333; }
+        #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-info .unav-total-results {
+          font-size: 16px;
+          font-weight: normal;
+          margin-left: 5px;
+          padding: .5em 0; }
+        #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-info .unav-provider-name {
+          font-size: 16px;
+          margin: 0;
+          display: inline-block; }
+      #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-results {
+        background: #fff;
+        padding: 10px 10px 0 10px; }
+      #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-result {
+        margin-bottom: 10px; }
+        #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-result a {
+          display: table;
+          text-decoration: none;
+          color: #333; }
+          #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-result a:hover {
+            text-decoration: underline; }
+        #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-result img {
+          height: auto;
+          display: table-cell;
+          margin-right: .5em;
+          width: 50px;
+          height: 50px; }
+        #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-result .unav-provider-result-title {
+          display: table-cell;
+          vertical-align: middle;
+          font-size: 16px; }
+          @media (min-width: 768px) {
+            #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-result .unav-provider-result-title {
+              font-size: 16px; } }
+          #unav-wrapper .unav-results-wrapper .unav-results .unav-provider-result .unav-provider-result-title span {
+            color: #bb0000;
+            font-weight: bold; }
+      #unav-wrapper .unav-results-wrapper .unav-results + .unav-more-results {
+        display: none;
+        background: #d1d1d1;
+        border: 5px solid #bb0000;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0; }
+        #unav-wrapper .unav-results-wrapper .unav-results + .unav-more-results .unav-loader {
+          margin: 0 auto;
+          padding-top: 2em;
+          display: block; }
+        #unav-wrapper .unav-results-wrapper .unav-results + .unav-more-results p {
+          margin: 0;
+          line-height: 43px;
+          text-align: center;
+          width: 100%;
+          padding: 1em 0; }
+          #unav-wrapper .unav-results-wrapper .unav-results + .unav-more-results p a {
+            color: #007fff; }
+
+#unav-wrapper.unav-dark {
+  background: #292929; }
+  #unav-wrapper.unav-dark #unav {
+    background: #292929; }
+    #unav-wrapper.unav-dark #unav .unav-univ-name {
+      background-image: url(../images/osu-navbar-sprite-white.png);
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+      background-size: 160px; }
+    #unav-wrapper.unav-dark #unav .unav-useful-links {
+      background: #000; }
+      @media (min-width: 768px) {
+        #unav-wrapper.unav-dark #unav .unav-useful-links {
+          background: transparent; } }
+    #unav-wrapper.unav-dark #unav .unav-useful-links a {
+      color: #fff; }
+    #unav-wrapper.unav-dark #unav .unav-controls a.unav-search-button {
+      background-image: url(../images/osu-navbar-sprite-white.png);
+      background-repeat: no-repeat;
+      background-position: -74px -1px;
+      background-size: 158px 78px;
+      border-left-color: #000;
+      border-right-color: #000; }
+    #unav-wrapper.unav-dark #unav .unav-controls a.unav-search-button.unav-active {
+      background-image: url(../images/osu-navbar-sprite-white.png);
+      background-repeat: no-repeat;
+      background-position: -114px -40px;
+      background-size: 158px 78px;
+      border-left-color: transparent; }
+    #unav-wrapper.unav-dark #unav .unav-controls a.unav-menu-button {
+      background-image: url(../images/osu-navbar-sprite-white.png);
+      background-repeat: no-repeat;
+      background-position: -115px -1px;
+      background-size: 158px 78px;
+      background-color: #292929; }
+  #unav-wrapper.unav-dark .unav-results-wrapper .unav-results {
+    background: #292929; }
+    #unav-wrapper.unav-dark .unav-results-wrapper .unav-results .unav-provider-results {
+      background: #000; }
+    #unav-wrapper.unav-dark .unav-results-wrapper .unav-results .unav-provider-info .unav-provider-name,
+    #unav-wrapper.unav-dark .unav-results-wrapper .unav-results .unav-provider-info .unav-total-results,
+    #unav-wrapper.unav-dark .unav-results-wrapper .unav-results .unav-provider-result a {
+      color: #fff; }
+    #unav-wrapper.unav-dark .unav-results-wrapper .unav-results .unav-provider-result .unav-provider-result-title span {
+      color: #7bb6dd; }
+  #unav-wrapper.unav-dark .unav-results-wrapper .unav-more-results {
+    background: #292929; }
+    #unav-wrapper.unav-dark .unav-results-wrapper .unav-more-results p a {
+      color: #7bb6dd; }
+  #unav-wrapper.unav-dark .unav-results-wrapper .unav-all-results a {
+    color: #7bb6dd; }

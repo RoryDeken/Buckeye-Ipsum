@@ -12,6 +12,27 @@ div, p {
   font-size:16px;
   line-height:28px;
 }
+a#copy {
+  background: #b00;
+  color:#fff;
+  padding:15px 20px;
+  display: inline-block;
+  text-align: center;
+  font-size: 18px;
+  margin: 24px auto;
+  position: relative;
+  left: calc(95% - 40px);
+}
+a#copy:hover, a#copy:focus {
+  background: #700;
+  text-decoration: none;
+}
+@media(max-width:580px) {
+  a#copy {
+    display: block;
+    left:0;
+  }
+  }
 .jumbotron, #controls {
   display:block;
 }

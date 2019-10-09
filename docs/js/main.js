@@ -1,4 +1,4 @@
-// (function(){
+(function(){
   var dictionary =
   [
     'woody','Archie Griffin', 'WOSU' ,'oval', 'mirror lake', 'horseshoe', 'moritz', 'scarlet',
@@ -27,7 +27,7 @@ for(i=0; i < dictionary.length; i++){
 document.getElementById('controls').addEventListener("change", generate);
 limit = document.getElementById('quantity').value - 1;
 type = parseInt(document.getElementById('type').value);
-// 90 words = paragraph
+
 function printWords(type = 2){
   text = 'Buckeye Ipsum ';
 bounds = 0;
@@ -37,6 +37,7 @@ if(type == 3){
   for(i = 0; i < limit ; i ++){
 
     spacing = i % paragraph;
+    console.log(spacing);
 
     if(bounds >= dictionary.length ){
       bounds = 0;
@@ -92,7 +93,5 @@ target.innerHTML = text;
 text = '';
 
 }
-
-
-
-// })();
+new ClipboardJS('#copy');
+})();
